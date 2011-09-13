@@ -46,5 +46,14 @@ namespace Tests.Models
 
             Assert.IsTrue(sessao.PodeReservar(1));
         }
+
+        [Test]
+        public void Reservar90IngressoEmSesssaoCom100ReservaDisponivel()
+        {
+            Sessao sessao = new Sessao();
+            sessao.TotalDeIngressos = 100;
+
+            Assert.IsTrue(sessao.PodeReservar(90));
+        }
     }
 }
