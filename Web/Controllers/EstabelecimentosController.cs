@@ -15,7 +15,6 @@ namespace AgileTickets.Web.Controllers
 
         public EstabelecimentosController(DiretorioDeEstabelecimentos estabelecimentos)
         {
-            // guarda estabelecimento
             this.estabelecimentos = estabelecimentos;
         }
 
@@ -31,7 +30,6 @@ namespace AgileTickets.Web.Controllers
 
             estabelecimentos.Salva(estabelecimento);
 
-            // redireciona
             return RedirectToAction("Index");
         }
 
