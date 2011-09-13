@@ -37,5 +37,14 @@ namespace Tests.Models
             sessao.Reserva(3);
             Assert.AreEqual(2, sessao.IngressosDisponiveis);
         }
+
+        [Test]
+        public void Reservar1IngressoEmSesssaoComUmaUnicaReservaDisponivel()
+        {
+            Sessao sessao = new Sessao();
+            sessao.TotalDeIngressos = 1;
+
+            Assert.IsTrue(sessao.PodeReservar(1));
+        }
     }
 }
