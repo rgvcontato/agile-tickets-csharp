@@ -36,13 +36,11 @@ namespace AgileTickets.Web.Models
          */
         public virtual List<Sessao> CriaSessoes(DateTime inicio, DateTime fim, Periodicidade periodicidade)
         {
-            // ALUNO: Não apague esse metodo. Esse sim será usado no futuro! ;)
             return null;
         }
 
         public virtual bool Vagas(int qtd, int min)
         {
-
             int totDisp = 0;
 
             foreach (Sessao s in Sessoes)
