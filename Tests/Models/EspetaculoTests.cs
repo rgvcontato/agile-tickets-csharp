@@ -10,11 +10,17 @@ namespace Tests.Models
     [TestFixture]
     public class EspetaculoTests
     {
+        Espetaculo ivete;
+
+        [SetUp]
+        public void Inicializa()
+        {
+            ivete = new Espetaculo();
+        }
+
         [Test]
         public void DeveInformarSeEhPossivelReservarAQuantidadeDeIngressosDentroDeQualquerDasSessoes()
         {
-            Espetaculo ivete = new Espetaculo();
-
             ivete.Sessoes.Add(SessaoComIngressosSobrando(1));
             ivete.Sessoes.Add(SessaoComIngressosSobrando(3));
             ivete.Sessoes.Add(SessaoComIngressosSobrando(2));
@@ -25,8 +31,6 @@ namespace Tests.Models
         [Test]
         public void DeveInformarSeEhPossivelReservarAQuantidadeExataDeIngressosDentroDeQualquerDasSessoes()
         {
-            Espetaculo ivete = new Espetaculo();
-
             ivete.Sessoes.Add(SessaoComIngressosSobrando(1));
             ivete.Sessoes.Add(SessaoComIngressosSobrando(3));
             ivete.Sessoes.Add(SessaoComIngressosSobrando(2));
@@ -37,8 +41,6 @@ namespace Tests.Models
         [Test]
         public void DeveInformarSeNaoEhPossivelReservarAQuantidadeDeIngressosDentroDeQualquerDasSessoes()
         {
-            Espetaculo ivete = new Espetaculo();
-
             ivete.Sessoes.Add(SessaoComIngressosSobrando(1));
             ivete.Sessoes.Add(SessaoComIngressosSobrando(3));
             ivete.Sessoes.Add(SessaoComIngressosSobrando(2));
@@ -49,8 +51,6 @@ namespace Tests.Models
         [Test]
         public void DeveInformarSeEhPossivelReservarAQuantidadeDeIngressosDentroDeQualquerDasSessoesComUmMinimoPorSessao()
         {
-            Espetaculo ivete = new Espetaculo();
-
             ivete.Sessoes.Add(SessaoComIngressosSobrando(3));
             ivete.Sessoes.Add(SessaoComIngressosSobrando(3));
             ivete.Sessoes.Add(SessaoComIngressosSobrando(4));
@@ -61,8 +61,6 @@ namespace Tests.Models
         [Test]
         public void DeveInformarSeEhPossivelReservarAQuantidadeExataDeIngressosDentroDeQualquerDasSessoesComUmMinimoPorSessao()
         {
-            Espetaculo ivete = new Espetaculo();
-
             ivete.Sessoes.Add(SessaoComIngressosSobrando(3));
             ivete.Sessoes.Add(SessaoComIngressosSobrando(3));
             ivete.Sessoes.Add(SessaoComIngressosSobrando(4));
@@ -73,8 +71,6 @@ namespace Tests.Models
         [Test]
         public void DeveInformarSeNaoEhPossivelReservarAQuantidadeDeIngressosDentroDeQualquerDasSessoesComUmMinimoPorSessao()
         {
-            Espetaculo ivete = new Espetaculo();
-
             ivete.Sessoes.Add(SessaoComIngressosSobrando(2));
             ivete.Sessoes.Add(SessaoComIngressosSobrando(2));
             ivete.Sessoes.Add(SessaoComIngressosSobrando(2));

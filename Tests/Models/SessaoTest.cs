@@ -10,49 +10,47 @@ namespace Tests.Models
     [TestFixture]
     public class SessaoTest
     {
+        private Sessao sessao;
+
+        [SetUp]
+        public void Inicializa()
+        {
+            sessao = new Sessao();
+        }
+
         [Test]
         public void DeveVender1IngressoSeHa2Vagas()
         {
-            Sessao sessao = new Sessao();
             sessao.TotalDeIngressos = 2;
-
             Assert.IsTrue(sessao.PodeReservar(1));
         }
 
         [Test]
         public void NaodeveVender3IngressoSeHa2Vagas()
         {
-            Sessao sessao = new Sessao();
             sessao.TotalDeIngressos = 2;
-
             Assert.IsFalse(sessao.PodeReservar(3));
         }
 
         [Test]
         public void ReservarIngressosDeveDiminuirONumeroDeIngressosDisponiveis()
         {
-            Sessao sessao = new Sessao();
             sessao.TotalDeIngressos = 5;
-
             sessao.Reserva(3);
             Assert.AreEqual(2, sessao.IngressosDisponiveis);
         }
 
         [Test]
-        public void Reservar1IngressoEmSesssaoComUmaUnicaReservaDisponivel()
+        public void ReservarTodosOsIngressoDisponiveisEmUmaSesssao()
         {
-            Sessao sessao = new Sessao();
             sessao.TotalDeIngressos = 1;
-
             Assert.IsTrue(sessao.PodeReservar(1));
         }
 
         [Test]
         public void Reservar90IngressoEmSesssaoCom100ReservaDisponivel()
         {
-            Sessao sessao = new Sessao();
             sessao.TotalDeIngressos = 100;
-
             Assert.IsTrue(sessao.PodeReservar(90));
         }
     }
